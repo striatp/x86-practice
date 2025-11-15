@@ -1,3 +1,5 @@
+; Task: Compare two integers and display which one is greater.
+
 section .data
     fmt     db "%d", 13, 10, 0
     equal   db "Both are equal", 13, 10, 0
