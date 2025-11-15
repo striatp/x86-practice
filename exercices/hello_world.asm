@@ -1,3 +1,5 @@
+; Task: Write a program that outputs "Hello, World!" to the console using a system or library call.
+
 section .data
     hello_msg db "Hello, world!", 13, 10, 0
 
