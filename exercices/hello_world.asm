@@ -11,7 +11,10 @@ extern printf
 _start:
     lea rcx, [rel hello_msg]
     xor rax, rax
+
+    sub rsp, 32
     call printf
+    sub rsp, 32
 
     xor rax, rax
     ret

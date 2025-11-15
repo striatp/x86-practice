@@ -11,7 +11,10 @@ extern printf
 _start:
     mov rcx, 0x5
     mov rdx, 0x4
+
+    sub rsp, 32
     call _mul_two_numbers
+    add rsp, 32
 
     lea rcx, [rel fmt]
     mov rdx, rax
