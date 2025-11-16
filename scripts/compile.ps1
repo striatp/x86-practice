@@ -8,11 +8,13 @@ param (
 if (-not $Source) {
     Write-Host "[ERROR] " -NoNewline -ForegroundColor Red ;
     Write-Host "A source file must be specified for compilation to occur." ;
+    exit 1 ;
 }
 
 if (-not (Test-Path -Path $Source)) {
     Write-Host "[ERROR] " -NoNewline -ForegroundColor Red ;
     Write-Host "The specified file does not exist." ;
+    exit 1 ;
 }
 
 function Compile {
@@ -23,9 +25,9 @@ function Compile {
         [string] $Source
     )
 
-    nasm -f win64 $Source -o .\bin\program.obj && gcc -nostartfiles .\bin\program.obj -o .\bin\program.exe && .\bin\program.exe | Out-Null
+    nasm -f win64 $Source -o .\bin\program.obj && gcc -nostartfiles .\bin\program.obj -o .\bin\program.exe && .\bin\program.exe | Out-Null ;
 
     Write-Host "Compiled" ;
 }
 
-Compile -Source $Source
+Compile -Source $Source ;
