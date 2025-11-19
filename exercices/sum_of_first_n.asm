@@ -7,6 +7,7 @@ section .text
 global _start
 
 extern printf
+extern ExitProcess
 
 _start:
     xor rax, rax
@@ -23,7 +24,6 @@ _start:
     jmp .loop_start
 
 .end:
-    ; Print the sum
     lea rcx, [rel fmt]
     mov rdx, rax
     xor rax, rax
@@ -32,5 +32,5 @@ _start:
     call printf
     add rsp, 0x20
 
-    xor rax, rax
-    ret
+    xor rcx, rcx
+    call ExitProcess
