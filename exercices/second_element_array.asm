@@ -9,8 +9,7 @@ extern printf
 extern ExitProcess
 
 _start:
-    mov rcx, 1
-    lea rax, [rel array + rcx*8]
+    lea rax, [rel array+1*8]
 
     sub rsp, 0x28
     lea rcx, [rel fmt]
