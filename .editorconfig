@@ -13,4 +13,4 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [Makefile]
-insert_final_newline = true
+insert_final_newline = false
